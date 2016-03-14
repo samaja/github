@@ -101,11 +101,11 @@ EOF
 
 
 # Juhul kui on ok, siis teeme reloadi
-	if [ $? -ne 0 ];
+if [ $? -ne 0 ];
 then
 	echo "Vigane confi-fail."
 	exit 1;
-else
+	else
 		cp /etc/samba/smb_backup.conf /etc/samba/smb.conf
 			echo "Kõik ok, reloadin"
 	sudo /etc/init.d/smbd reload
