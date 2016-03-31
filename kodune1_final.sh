@@ -32,7 +32,7 @@ else
     echo "Viga, pole piisavalt parameetreid. Käivitada kaust grupp"
 
 #eq 2 lõpp
-fi
+	fi
 #eq 3 lõpp
 fi
 
