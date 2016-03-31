@@ -18,7 +18,7 @@
 #https://wiki.itcollege.ee/index.php/Veebiserveri_labor_v.2
 
 
-#Õiguste kontroll.
+#Kasutaja õiguste kontroll.
 if [ $UID -ne 0 ];
 then
     echo "Skripti käivitamiseks on vaja root õiguseid!"
@@ -46,7 +46,7 @@ grep "127.0.0.1 $WEB" /etc/hosts || echo "127.0.0.1 $WEB" >> /etc/hosts
 #Kodukausta loomine kui seda pole(index.html jaoks).
 
 if [ -d /var/www/$WEB ] ;then
-    echo "Veebilehe kodukaust $WEB juba eksisteerib."
+    echo "Veebilehe kodukaust $WEB on juba olemas."
     exit 3
 else 
 mkdir -p /var/www/$WEB/
