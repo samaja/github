@@ -8,7 +8,7 @@
 #Kopeerib vaikimisi veebisaidi ja modifitseerib index.html faili sisu vastavalt loodavale lehele.
 
 #exit koodid:
-#exit 1 - Kasutajal puuduvad root oigused.
+#exit 1 - Kasutajal puuduvad root õigused.
 #exit 2 - Parameetreid ei olnud õiged.
 #exit 3 - Veebilehe kodukaust on juba olemas.
 #exit 4 - Apache2 konfis tekkis viga.
@@ -21,7 +21,7 @@
 #Õiguste kontroll.
 if [ $UID -ne 0 ];
 then
-    echo "Skripti käivitamiseks on vaja root oiguseid!"
+    echo "Skripti käivitamiseks on vaja root õiguseid!"
 exit 1
 fi
 
