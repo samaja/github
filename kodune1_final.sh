@@ -1,14 +1,14 @@
 #!/bin/bash
 # Autor: Jaak Alas
 # Grupp: A21
-# Kodutöö 1
+# KodutÃ¶Ã¶ 1
 
 
-#Kontroll kas root õigused olemas.
+#Kontroll kas root Ãµigused olemas.
 
 if [ $UID -ne 0 ]
 then
-    echo "Käivita $0 juurkasutajas"
+    echo "KÃ¤ivita $0 juurkasutajas"
     exit 1
 fi
 # Kontroll, kas argumendid on olemas.
@@ -29,14 +29,20 @@ else
             SHARE=$(basename $KAUST)
 
 else 
-    echo "Viga, pole piisavalt parameetreid. Käivitada kaust grupp"
+    echo "Viga, pole piisavalt parameetreid. KÃ¤ivitada kaust grupp"
 
+<<<<<<< HEAD
 #eq 2 lõpp
 	fi
 #eq 3 lõpp
+=======
+#eq 2 lÃµpp
+	fi
+#eq 3 lÃµpp
+>>>>>>> origin/master
 fi
 
-echo "Skript õnnestus siiamaani. Jagab välja kausta $SHARE, grupile $GROUP."
+echo "Skript Ãµnnestus siiamaani. Jagab vÃ¤lja kausta $SHARE, grupile $GROUP."
 
 # Kontroll kas grupp on olemas. Kui mitte, siis luuakse.
 
@@ -55,12 +61,12 @@ then
 
 test -d $KAUST || mkdir -p $KAUST || exit
 
-# Määrame kausta grupiks etteantud grupi.
+# MÃ¤Ã¤rame kausta grupiks etteantud grupi.
 
 chgrp $GRUPP $KAUST
 
 
-# Anname grupi õigused konkreetsele kaustale.
+# Anname grupi Ãµigused konkreetsele kaustale.
 
 chmod g+ws $KAUST
 
@@ -95,19 +101,19 @@ cat >> /etc/samba/smb_backup.conf << EOF
     directory mask=0775
 EOF
 
-# Testime testparm -s käsu abil
+# Testime testparm -s kÃ¤su abil
 
 	testparm -s /etc/samba/smb_backup.conf
 
 
 # Juhul kui on ok, siis teeme reloadi
-	if [ $? -ne 0 ];
+if [ $? -ne 0 ];
 then
 	echo "Vigane confi-fail."
 	exit 1;
-else
+	else
 		cp /etc/samba/smb_backup.conf /etc/samba/smb.conf
-			echo "Kõik ok, reloadin"
+			echo "KÃµik ok, reloadin"
 	sudo /etc/init.d/smbd reload
 fi
 	
