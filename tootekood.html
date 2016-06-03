@@ -1,0 +1,34 @@
+
+<div id="tekstDiv">
+  <h1>Tootekoodid</h1>
+  <p style="color: white;">Täida kõik tärniga väljad</p>
+  <div id="tableDiv">
+	<form action="?mode=tootekood" method="post">
+	  <b>Kaup:</b>
+	  <br>
+	  <input type="text" name="kaup" value="<?php if (isset($_POST['kaup'])) echo htmlspecialchars($_POST['kaup']);?>" /> <?php if (!isset($_POST['kaup']) || $_POST['kaup'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+
+	  <input type="submit" value="Otsi"/>  
+	</form>
+    <table>
+	  <tr>
+	    <th>Kaup</th><th>Tootekood</th><th>Ladu</th>
+	  </tr>
+	  <?php
+	  sql_connect();
+	  $result = search();
+	  if (isset($_POST['kaup']) && $_POST['kaup'] != "") {
+		while($rida = mysqli_fetch_assoc($result)) { ?>
+			<tr>
+				<td><?php echo "{$rida['kaup']}"; ?></td><td><?php echo "{$rida['tootekood']}"; ?></td><td><?php echo "{$rida['ladu']}"; ?></td>
+			</tr>
+		<?php }
+	  }?>
+    </table>
+
+	<?php if(check_login() && isset ($_SESSION['admin'])) { ?>
+		<br><br>
+		<button onclick="parent.location='kontroller.php?mode=lisa_toode'">Lisa Toode</button>
+	<?php } ?>
+  </div>	
+</div>

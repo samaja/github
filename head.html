@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8"/>
+	  <title>Galerii</title>
+	  <link type="text/css" rel="stylesheet" href="stiil.css" />
+	  <script src="javas2.js"></script>
+	</head>
+ 
+	<body>
+	  <div id="header">
+	    <div id="menu_left">
+		  <a href="kontroller.php"><img src="img/logo.png" width="328" height="120" alt="midagi"/></a>
+		</div>
+		<div id="menu_right">
+	      <ul id="menuList">
+		    <li><a href="kontroller.php">Pealeht</a></li>
+		    <li><a href="kontroller.php?mode=galerii">Galerii</a></li>
+			<li><a href="kontroller.php?mode=tooted">Tooted</a></li>
+		    <li><a href="kontroller.php?mode=foorum">Foorum</a></li>
+			<?php if(check_login()): ?> 
+						<li><a href="kontroller.php?mode=logout">Logi Välja</a></li>
+			<?php else: ?> 
+						<li><a href="kontroller.php?mode=login">Logi Sisse</a></li>
+			<?php endif; ?>
+		    <li><a href="kontroller.php?mode=register">Registreeri</a></li>
+		  </ul>
+		</div>
+	  </div>
+	  
+	  <div id="contentDiv">

@@ -1,0 +1,25 @@
+
+<div id="galeriiDiv">
+  <h1>Galerii</h1>
+  
+  <?php
+	for($i=1; $i <= 4; $i++) {
+		foreach($pildid as $key => $value) { ?>
+			<a href="<?php echo $value['img']; ?>"> <img src="<?php echo $value['thumb']; ?>" alt="<?php echo $value['alt']; ?>"/></a>			
+  <?php	} 
+	}?>
+  
+</div>
+
+<div id="hoidja">
+  <div id="taust"></div>
+  <div id="tabel">
+    <div id="cell">
+      <div id="sulge" onclick="hideDetails();">Sulge</div>
+      <div id="sisu">
+	    <img id="suurpilt" src="img/ukf.jpg" alt="ajutine"/><br/>
+	    <span id="inf"></span>
+      </div>
+    </div>
+  </div>
+</div>

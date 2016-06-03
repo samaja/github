@@ -1,0 +1,26 @@
+
+<div id="logonDiv">
+  <p style="text-align: center;"> <?php if(isset($error['user_created'])) echo $error['user_created']; ?>
+  <h1>Registreeri</h1>
+  <form method="POST" accept-charset="UTF-8">
+	<table>
+	  <tr>
+	    <td><input type="text" name="kasutajanimi" placeholder="Kasutajanimi" value="<?php if(isset($_POST['kasutajanimi'])) echo $_POST['kasutajanimi']; ?>"></td>
+	  </tr>
+		<tr><td style="text-align: center;"> <?php if(isset($error['emptyuser'])) echo $error['emptyuser']; elseif(isset($error['username_exists'])) echo $error['username_exists'];?> </td></tr>
+	  </tr>
+	  <tr>
+		<td><input type="password" name="parool" placeholder="Parool"></td>
+	  </tr>
+		 <tr><td style="text-align: center;"> <?php if(isset($error['emptypass'])) echo $error['emptypass']; elseif(isset($error['wrongpass'])) echo $error['wrongpass']; ?> </td></tr>
+	  <tr>
+		<td><input type="password" name="parool2" placeholder="Parool Uuesti"></td>
+	  </tr>
+		 <tr><td style="text-align: center;"> <?php if(isset($error['emptypass2'])) echo $error['emptypass2']; elseif(isset($error['wrongpass'])) echo $error['wrongpass']; ?> </td></tr>
+	</table>
+	
+	<div id="inputDiv">
+	  <input type="submit" value="Registreeri">
+	</div>
+</form>
+</div>

@@ -1,0 +1,22 @@
+
+<div id="tekstDiv">
+  <h1>Tooted</h1><?php if(isset($error['viga5'])) echo $error['viga5']; { ?>
+  <div id="tableDiv">
+    <table>
+	  <tr>
+	    <th>Kaup</th><th>Hind (tükk)</th><th>Laoseis</th>
+	  </tr>
+	  <?php
+	  for($i=1; $i<=table(); $i++) { ?>
+		<tr>
+			<td><?php kaup($i); ?></td><td><?php hind($i); ?></td><td><?php laoseis($i); ?></td>
+		</tr>
+	  <?php } ?>
+    </table>
+
+	<?php if(check_login() && isset ($_SESSION['admin'])) { ?>
+		<br><br><button onclick="parent.location='kontroller.php?mode=tootekood'">Tootekoodid</button>
+		<button onclick="parent.location='kontroller.php?mode=lisa_toode'">Lisa Toode</button>
+	<?php } ?>
+  </div>	
+</div>

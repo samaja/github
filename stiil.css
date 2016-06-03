@@ -1,0 +1,190 @@
+﻿/*PÕHI STIIL, VUNDAMENT*/ 
+body { 
+	background-image: url("img/wallpaper5.jpg"); 
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	font-family: HelveticaNeue, Arial, Tahoma, sans-serif;
+}
+#header {
+	min-width: 1000px;
+	max-width: 1200px;
+	min-height: 120px;
+	margin: auto;
+}
+#menu_left { /*Headeri vasak pool, (logo)*/
+	float: left;
+	background: rgba(0, 0, 0, 0.5);
+}
+#menu_right { /*Headeri parem pool, menüü (Navigation bar) ei ole nuppe*/
+	float: right;
+	position: relative;
+	right: 50px;
+}
+#menuList { /*Menüü nuppude asetus lehe suhtes*/
+	min-height: 120px;
+	padding: 0px;
+	margin: auto;
+}
+#menuList a { /*Menüü nupud, stiil ja animatsioon*/
+	border: solid;
+	border-width: 1px;
+	border-color: #ecffc4;
+	border-radius: 0px 0px 20px 20px;
+	box-shadow: #353535 5px 5px 5px;
+	background-color: #7cbe42;
+	text-decoration: none;
+	font-family: HelveticaNeue, Arial, Tahoma, sans-serif;
+	font-size: 15px;
+	color: #666666;
+	display: block;
+	width: 75px;
+	min-height: 80px;
+	padding: 1px;
+	text-align: center;
+	line-height: 80px;
+	margin: auto;
+	transition: all 0.5s;
+}
+#menuList li { /*Nuppude asetus üksteise suhtes*/
+	display: inline-block;
+	float: left;
+	min-height: 80px;
+	padding-left: 9px;
+}
+#menuList a:hover { /*Hiir nupu peal*/
+	background-color: #a4ea41;
+	min-height: 100px;
+	color: white;
+}
+#menuList a:active { /*Hiire klikk nupul*/
+	box-shadow: 0px 0px 15px #FFFFFF;
+}
+#contentDiv { /*Lehesisu, teksti box jms.*/
+	min-width: 1000px;
+	max-width: 1200px;
+	margin: auto;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+#tekstDiv { /*Lehesisu sisu stiil.*/
+	margin: 30px;
+	padding-bottom: 30px;
+	color: #a38a65;
+}
+#validators {
+	position: absolute;
+	left: 0px;
+	top: 1000px;
+}
+/*PÕHI STIILI LÕPP*/
+/*LOGI SISSE JA REGISTREERI STIIL*/
+#logonDiv {
+	margin: 30px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+#logonDiv table { 
+	margin: auto;
+}
+#logonDiv h1 { /*Logon pealkiri*/
+	text-align: center;
+	margin-bottom: 5px;
+	color: #a38a65;
+}
+#logonDiv input { /*Logon kastid, nupud*/
+	text-align: center;
+	background-color: #000000;
+	color: #cccccc;
+	border: 1px solid #a38a65;
+	box-shadow: 0px 0px 5px #fff;
+	min-height: 30px;
+	margin-top: 10px;
+}
+#logonDiv table {
+}
+::-webkit-input-placeholder { /*Placeholderi värv. Mujalt võetud https://css-tricks.com/snippets/css/style-placeholder-text/ */
+    color:    #333333;
+}
+#inputDiv { /*Nuppude asetus*/
+	text-align: center;
+}
+/*LOGI SISSE JA REGISTREERI STIILI LÕPP*/
+/*GALERII STIILI ALGUS*/
+#galeriiDiv {
+	margin: 30px;
+	color: #a38a65;
+}
+#galeriiDiv  img{
+	margin-bottom: 12px;
+	margin-right: 12px;
+    transition: all 1s;
+}
+#galeriiDiv img:hover {
+	transform: rotate(5deg);
+	box-shadow: 0px 0px 20px #fff;
+}
+#galeriiDiv img:active {
+	transform: rotate(-5deg);
+	box-shadow: 0px 0px 20px #fff;
+}
+/*GALERII STIILI LÕPP*/
+/*TABELID STIILI ALGUS*/
+#tableDiv table {
+	border: 1px solid #6d6d6d;
+}
+#tableDiv td {
+	border: 1px solid #6d6d6d;
+}
+#tableDiv th {
+	width: 500px;
+	border: 1px solid #6d6d6d;
+}
+/*TABELID STIILI LÕPP*/
+/*Javascript, galerii vaade algus*/
+#taust{ /* taust, mis peidab lehe sisu */
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.7);
+	z-index:5;
+}
+#tabel{ /* toob suure pildi esile ja määrab kuvamise ala tabelina */
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin:0 auto;
+	z-index: 10;
+	display:table;
+  	width:100%;
+  	height:100%;
+  	color:white;
+}
+#cell{ /* paigutab pildi ja teksti vertikaalselt keskele nagu tabelivälja */
+	display:table-cell;
+  	vertical-align:middle;
+}
+#sisu { /* teeb pildi ümbruse kitsamaks ja annab tausta */
+	display: table;
+	margin: auto;
+	background: rgba(0,0,0,0.7);
+	padding: 10px;
+}
+#sulge { /* sulgemise element */
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 15;
+	padding:4px;
+	font-weight: bold;
+}
+#hoidja {  /* ümbritseb kogu suure pildi elementide hulka 0px kõrgusena, et teised elemendid taga oleks kasutatavad*/
+	display: none;
+	height: 0px;
+}
+/*JS, galerii vaade lõpp*/

@@ -1,0 +1,47 @@
+CREATE TABLE jalas_tooted(
+	id INTEGER PRIMARY KEY auto_increment,
+	kaup varchar(200),
+	hind integer NOT NULL,
+	laoseis integer DEFAULT 0,
+	tootekood varchar(50)
+);
+
+INSERT INTO jalas_tooted(id, kaup, hind, laoseis, tootekood) VALUES
+	(1, 'CD Plaat', 1, 6847, 'ABCDEFGHIJKLMNOP'),
+	(2, 'Monitor', 150, 35, '1234566AAAASFDS'),
+	(3, 'Arvuti', 1400, 10, 'KJDHGF76T234GJHK'),
+	(4, 'Protsessor', 300, 58, 'BLITUKHVR6T87Y3ERVF'),
+	(5, 'GPU', 499, 24, '4K5HJ54IUYHG4958'),
+	(6, 'PSU', 154, 12, 'K4U5YTKUBG4V634FRT'),
+	(7, 'Tere', 123, 2, 'G65EDR6H7U6RU867'),
+	(8, 'Kõlarid', 987, 0, 'LKHGSDFJHS9876'),
+	(9, 'Porgand', 2, 4987, '1337LEETPORGAND'),
+	(10, 'GPU', 687, 4, 'KJHLFDGUY986756');
+
+CREATE TABLE jalas_users(
+	id INTEGER PRIMARY KEY auto_increment,
+	username varchar(100) NOT NULL,
+	password varchar(1000) NOT NULL,
+	power varchar(10)
+);
+
+INSERT INTO jalas_users (id, username, password, power) VALUES
+	(1, 'ints', 'c18c1482fe530230df1fc21d4847711e1b56c89c', 'admin'),
+	(3, 'test', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'peasant'),
+	(12, 'tere', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'peasant');
+
+CREATE TABLE jalas_tootekood(
+	id INTEGER PRIMARY KEY auto_increment,
+	tootekood varchar(50),
+	ladu varchar(100)
+);
+
+INSERT INTO jalas_tootekood (id, tootekood, ladu) VALUES
+	(1, 'ABCDEFGHIJKLMNOP', 'Leedu'),
+	(2, '1234566AAAASFDS', 'Eesti'),
+	(3, 'KJDHGF76T234GJHK', 'Läti'),
+	(4, 'BLITUKHVR6T87Y3ERVF', 'Eesti'),
+	(5, '4K5HJ54IUYHG4958', 'Soome'),
+	(6, 'LKHGSDFJHS9876', 'Eesti'),
+	(7, '1337LEETPORGAND', 'Eesti'),
+	(8, 'KJHLFDGUY986756', 'Hiina');

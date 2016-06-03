@@ -1,0 +1,29 @@
+
+<div id="tekstDiv">
+  <h1>Toote Lisamine</h1>
+  <p style="color: white;">Täida kõik tärniga väljad</p>
+  <form action="?mode=lisa_toode" method="post">
+	<b>Kaup:</b>
+	<br>
+	<input type="text" name="kaup" value="<?php if (isset($_POST['kaup'])) echo htmlspecialchars($_POST['kaup']);?>" /> <?php if (!isset($_POST['kaup']) || $_POST['kaup'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+	<b>Hind(ainult number):</b>
+	<br>
+	<input type="text" name="hind" value="<?php if (isset($_POST['hind'])) echo htmlspecialchars($_POST['hind']);?>" /> <?php if (!isset($_POST['hind']) || $_POST['hind'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+	<b>Laoseis:</b>
+	<br>
+	<input type="text" name="laoseis" value="<?php if (isset($_POST['laoseis'])) echo htmlspecialchars($_POST['laoseis']);?>" /> <?php if (!isset($_POST['laoseis']) || $_POST['laoseis'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+	<b>Tootekood:</b>
+	<br>
+	<input type="text" name="tootekood" value="<?php if (isset($_POST['tootekood'])) echo htmlspecialchars($_POST['tootekood']);?>" /> <?php if (!isset($_POST['tootekood']) || $_POST['tootekood'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+	<b>Ladu:</b>
+	<br>
+	<input type="text" name="ladu" value="<?php if (isset($_POST['ladu'])) echo htmlspecialchars($_POST['ladu']);?>" /> <?php if (!isset($_POST['ladu']) || $_POST['ladu'] == "") { ?> <b style="color: red;">*</b> <?php } ?> <br><br>
+	
+	<input type="submit" value="Lisa Toode"/>
+  </form>
+
+	<?php if(check_login() && isset ($_SESSION['admin'])) { ?>
+		<br><br><button onclick="parent.location='kontroller.php?mode=tootekood'">Tootekoodid</button>
+	<?php } ?>
+  </div>	
+</div>
