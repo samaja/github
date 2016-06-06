@@ -2,7 +2,7 @@
 
 #Autor: Jaak Alas
 
-#Script väljastab kõik võimalikud pangakaartide PIN-koodid
+#Script väljastab kõikvõimalikud pangakaartide PIN-koodid
 
 
 
