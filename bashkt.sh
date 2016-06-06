@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Autor: Jaak Aals
+#Autor: Jaak Alas
 
 #Script väljastab kõik võimalikud pangakaartide PIN-koodid
 
